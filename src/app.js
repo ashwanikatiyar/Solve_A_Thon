@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
+const visitorRoutes = require('./routes/visitorRoutes');
 
 dotenv.config();
 const app = express();
@@ -25,6 +26,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/visitors', visitorRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 3000;

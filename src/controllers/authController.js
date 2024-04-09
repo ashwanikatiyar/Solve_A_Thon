@@ -8,7 +8,7 @@ dotenv.config();
 
 exports.signup = async (req, res) => {
     try {
-      const { name, age, address, password } = req.body;
+      const { name, email, password } = req.body;
   
       // Check if the user already exists
       const existingUser = await User.findOne({ name });
@@ -19,8 +19,7 @@ exports.signup = async (req, res) => {
       // Create a new user
       const newUser = new User({
         name,
-        age,
-        address,
+        email,
         password
       });
   
@@ -37,7 +36,7 @@ exports.signup = async (req, res) => {
 
   exports.login = async (req, res) => {
     try {
-      const { name, password } = req.body;
+      const { name, email ,password } = req.body;
   
       // Find the user by name
       const user = await User.findOne({ name });
