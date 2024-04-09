@@ -1,7 +1,7 @@
 // src/controllers/authController.js
 
 const User = require('../models/user');
-const jwt = require('jsonwebtoken');
+
 const dotenv = require('dotenv');
 
 dotenv.config();
